@@ -337,25 +337,35 @@ tbody tr:nth-child(3) td:first-child{color:#d97706;font-weight:900;}
 }
 
 @media(max-width:768px){
-  body{padding:10px;} h1{font-size:28px;letter-spacing:3px;}
-  #gate h1{font-size:30px;}
-  #gate img{max-height:170px!important;max-width:360px!important;}
-  .scanvas,.dcanvas{background-size:44px 44px,44px 44px,min(280px,70%) auto!important;padding:25px;}
-  .ctrl-bar{flex-direction:column;align-items:stretch;gap:15px;}
-  .cg{width:100%;border-left:none!important;padding-left:0!important;justify-content:space-between;}
-  .cg input{flex-grow:1;margin-right:10px;width:auto;}
-  .fpanel{flex-direction:column;padding:12px 15px!important;border-radius:0 0 12px 12px!important;}
-  .fnav{width:100%;justify-content:space-between;margin-bottom:10px;gap:10px;}
-  .fnav button{flex:1;padding:10px!important;font-size:14px!important;margin:0;}
-  .fzone{flex-wrap:wrap;gap:10px;width:100%;}
-  .flabel{width:100%;text-align:center;margin-bottom:2px;}
-  .fname{max-width:90px;font-size:18px;}
-  .fscore{width:60px;height:45px;font-size:22px!important;padding:5px;}
+  body{padding:8px;overflow-x:hidden;}
+  h1{font-size:26px!important;letter-spacing:3px;}
+  .sub{font-size:11px;letter-spacing:2px;}
+  .wrap{padding:12px;border-radius:14px;}
+  #gate h1{font-size:26px;}
+  #gate img{max-height:130px!important;max-width:290px!important;}
+  #gate .gcard{background:transparent!important;border:none!important;box-shadow:none!important;padding:8px!important;}
+  #gate .gcard button{font-size:15px!important;padding:14px!important;}
+  .ctrl-bar{flex-direction:column;align-items:stretch;gap:10px;padding:14px;}
+  .cg{width:100%;border-left:none!important;padding-left:0!important;justify-content:space-between;gap:8px;}
+  .cg input{flex:1;min-width:0;}
+  .bsuccess{font-size:16px!important;padding:13px!important;}
+  .fpanel{flex-direction:column;padding:10px 12px!important;border-radius:0 0 14px 14px!important;gap:6px;}
+  .fnav{width:100%;justify-content:space-between;margin-bottom:4px;gap:8px;}
+  .fnav button{flex:1;padding:9px!important;font-size:13px!important;}
+  .fzone{flex-wrap:wrap;gap:8px;width:100%;justify-content:center;}
+  .flabel{width:100%;text-align:center;font-size:15px!important;margin-bottom:2px;}
+  .fname{max-width:80px;font-size:16px;}
+  .fscore{width:58px!important;height:44px;font-size:20px!important;padding:4px;}
   .fspacer{display:none;}
-  #finzone{flex-direction:column;gap:10px;padding-top:5px;}
-  .padtop{padding-top:210px;}
+  #finzone{flex-direction:column;gap:8px;padding-top:4px;}
+  .padtop{padding-top:205px;}
+  #sbar{flex-wrap:wrap;gap:5px;padding:6px 10px;font-size:12px;}
   #lbtable{display:block;overflow-x:auto;white-space:nowrap;}
-  #veil{font-size:12px;padding:8px 14px;}
+  table{font-size:12px;}
+  th,td{padding:8px 6px;}
+  #veil{font-size:11px;padding:7px 14px;bottom:12px;}
+  li{padding:7px 10px;}
+  .scanvas,.dcanvas{padding:20px;}
 }
 </style>
 </head>
@@ -580,14 +590,7 @@ let history=[];              // 上一步 stack
 // GATE 邏輯
 // ══════════════════════════════════════════════
 // 裁判允許的 email 清單（可自行新增）
- const JUDGE_EMAILS = [
-         "yuan01224@gmail.com",
-         "yuchen04200827@gmail.com",
-         "sammi94256@gmail.com",
-         "zxcv891224@yahoo.com.tw",
-         "a0976165875@gmail.com",
-         "裁判3號的信箱@gmail.com"
-]; 
+const JUDGE_EMAILS = ['yuan01224@gmail.com'];
 const ROOM_ID = 'beyblade-main'; // 固定唯一房間
 
 // 初始化 Firebase（只做一次）
